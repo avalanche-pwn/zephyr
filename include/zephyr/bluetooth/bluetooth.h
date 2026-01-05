@@ -2116,6 +2116,16 @@ int bt_le_per_adv_sync_delete(struct bt_le_per_adv_sync *per_adv_sync);
 int bt_le_per_adv_sync_cb_register(struct bt_le_per_adv_sync_cb *cb);
 
 /**
+ * @brief Unregister periodic advertising sync callbacks.
+ *
+ * Removes the callback structure from the list of periodic advertising
+ * sync callbacks.
+ *
+ * @param cb Callback struct.
+ */
+void bt_le_per_adv_sync_cb_unregister(struct bt_le_per_adv_sync_cb *cb);
+
+/**
  * @brief Enables receiving periodic advertising reports for a sync.
  *
  * If the sync is already receiving the reports, -EALREADY is returned.

@@ -2065,6 +2065,10 @@ int bt_le_per_adv_sync_cb_register(struct bt_le_per_adv_sync_cb *cb)
 	return 0;
 }
 
+void bt_le_per_adv_sync_cb_unregister(struct bt_le_per_adv_sync_cb *cb) {
+	sys_slist_find_and_remove(&pa_sync_cbs, &cb->node);
+}
+
 static int bt_le_set_per_adv_recv_enable(struct bt_le_per_adv_sync *per_adv_sync, bool enable)
 {
 	struct bt_hci_cp_le_set_per_adv_recv_enable *cp;
